@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    background:#87CEEB;
+    animation: transitionIn 0.5s;
+}
+
+.container {
+    max-width: 1110px;
+    padding: 0 30px;
+    margin: 0 auto;   
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.navbar {
+    background: rgb(0, 0, 0);
+    color: #FFffff;
+    font-size: 30px;
+    font-weight: bold;
+    height: 90px;
+}
+
+.navbar a {
+    color: #FFffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    height: 100%;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar a:hover {
+    color: orangered;
+}
+
+.header {
+    
+    background: rgb(251,230,199);
+    color: rgb(0, 0, 0);
+    min-width: 400px;
+   
+}
+
+.calculator {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container1 {
+    max-width: 800px;
+    width: 100%;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container1 .title {
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+}
+
+.container1 .title ::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    color: aqua;
+
+
+}
+
+.container1 form .user-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px, 0, 12px, 0px;
+}
+
+form .user-detail .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-detail .input-box .details {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.user-detail .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    font-size: 16px;
+    transition: all 0.3s ease;
+    
+}
+
+.user-detail .input-box input:focus,
+.user-detail .input-box input:valid {
+    border-color: rgb(0, 0, 0);
+}
+
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form .gender-details .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0 ;
+    justify-content: space-between;
+}
+
+.gender-details .category label {
+    display: flex;
+    align-items: center;
+}
+
+
+
+#dot-1:checked ~ .category label .dot-one,
+#dot-2:checked ~ .category label .dot-two,
+#dot-3:checked ~ .category label .dot-three {
+    border-color:#d9d9d9 ;
+    background:aqua ;
+}
+
+form .button {
+    height: 45px;
+    margin: 45px 0 ;
+}
+.label {
+    padding: 10px
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background:#000000;
+}
+
+.total .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+
+@keyframes transitionIn {
+    from {
+            opacity: 0;
+            transform: rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+
+
