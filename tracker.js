@@ -7,6 +7,7 @@ let totalFats =0
 let totalCarbs =0 
 let totalProtein =0
 let totalCalories = 0
+let idnum = 0
 
 form.addEventListener("submit", function(e){ //when the submit button is clicked.
     e.preventDefault(); //prevent default behavior.
@@ -20,8 +21,8 @@ form.addEventListener("submit", function(e){ //when the submit button is clicked
         method: 'post', 
         url: 'https://trackapi.nutritionix.com/v2/natural/nutrients', 
         headers: {  
-          'x-app-id': '6bf6c5d5', 
-          'x-app-key': '8b3cd6a561d32f76e541569003bb0af5', 
+          'x-app-id': 'abb70c85', 
+          'x-app-key': 'b1768a5dd5fe49ef9ffef9af4d666616', 
           'x-remote-user-id': '0',  
           'Content-Type': 'application/json' 
         },
@@ -36,7 +37,7 @@ form.addEventListener("submit", function(e){ //when the submit button is clicked
             Math.trunc(response.data.foods[0].nf_total_fat),
             Math.trunc(response.data.foods[0].nf_total_carbohydrate),
             Math.trunc(response.data.foods[0].nf_protein),
-            response.data.foods[0].photo.thumb,
+            response.data.foods[0].photo.thumb, idnum
         ))
         newFoodItem(index);
         index++;
@@ -49,13 +50,15 @@ form.addEventListener("submit", function(e){ //when the submit button is clicked
 )
 
 class foodInfo{ //create a class to store the food information.
-    constructor(name,cal,fats,carbs,prot,imgLink){
+    constructor(name,cal,fats,carbs,prot,imgLink,id){
         this.name = name;
         this.cal = cal 
         this.fats = fats
         this.carbs = carbs 
         this.prot = prot 
         this.imgLink = imgLink
+        this.id = id
+        idnum++
     }
 }
 
@@ -80,22 +83,34 @@ function newFoodItem(index){
     <p>${foodItems[index].fats}g fat</p>
     <p>${foodItems[index].carbs}g carbs</p>
     <img src="${foodItems[index].imgLink}">
-    <i class="fa-solid fa-trash-alt" id="trash"> </i>`; //add the food information to the div.
+    <i class="fa-solid fa-trash-alt" id="trash ${foodItems[index].id}"> </i>`; //add the food information to the div.
     document.querySelector(".foodDiary").appendChild(newFood); //add the div to the container.
     }
     
     document.querySelector(".foodDiary").addEventListener("click", function(e){
+        console.log(e.target)   //TRASHTRASH
         if(e.target.classList.contains("fa-trash-alt")){
             console.log("trash clicked");
             let foodItem = e.target.parentElement;
-            totalCalories -= foodItems[index].cal;
+            let element = e.target
+            let temp = ""
+            temp = element.id
+            temp = temp.substring(5)
+            let trashId = parseInt(temp)
+            console.log(trashId)
+            totalCalories -= foodItems[trashId].cal;
             document.querySelector('.totalCaloriesValue').innerHTML = `<h2>Calories: ${totalCalories}</h2>`;
-            totalFats -= foodItems[index].fats;
+            totalFats -= foodItems[trashId].fats;
             document.querySelector('.totalFatsValue').innerHTML = `<h2>Fats: ${totalFats}</h2>`;
-            totalCarbs -= foodItems[index].carbs;
+            totalCarbs -= foodItems[trashId].carbs;
             document.querySelector('.totalCarbsValue').innerHTML = `<h2>Carbs: ${totalCarbs}</h2>`;
-            totalProtein -= foodItems[index].prot;
+            totalProtein -= foodItems[trashId].prot;
             document.querySelector('.totalProteinValue').innerHTML = `<h2>Protein: ${totalProtein}</h2>`;
+            foodItem.remove()
+            console.log(totalCalories)
+            console.log(totalFats)
+            console.log(totalCarbs)
+            console.log(totalProtein)
         }
       });
 

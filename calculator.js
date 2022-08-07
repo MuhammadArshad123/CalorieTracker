@@ -15,18 +15,18 @@ btn.addEventListener("click", e => {
     console.log(isOther)
 
     let cal = addActivity(calculate(isMale,isFemale,isOther,age,weight,height),activity)
-    document.querySelector("total-amount").innerHTML = cal;
+    document.querySelector(".total-amount").innerHTML = cal;
 })
 
 
 
 function calculate(isMale,isFemale,isOther,age,weight,height){
     if(isMale){
-        return ((weight*.45)*10) + ((height*2.54)*6.25)-(5*age)+5
+        return Math.trunc(((weight*.45)*10) + ((height*2.54)*6.25)-(5*age)+5)
     }else if(isFemale){
-        return ((weight*.45)*10) + ((height*2.54)*6.25)-(5*age)-161
+        return Math.trunc(((weight*.45)*10) + ((height*2.54)*6.25)-(5*age)-161)
     }else if(isOther){
-        return ((((weight*.45)*10) + ((height*2.54)*6.25)-(5*age)+5) + (((weight*.45)*10) + ((height*2.54)*6.25)-(5*age)-161)) / 2
+        return Math.trunc(((((weight*.45)*10) + ((height*2.54)*6.25)-(5*age)+5) + (((weight*.45)*10) + ((height*2.54)*6.25)-(5*age)-161)) / 2)
     }
 }
 
