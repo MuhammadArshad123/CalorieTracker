@@ -15,7 +15,7 @@ btn.addEventListener("click", e => {
     console.log(isOther)
 
     let cal = addActivity(calculate(isMale,isFemale,isOther,age,weight,height),activity)
-    document.querySelector(".total-amount").innerHTML = cal;
+    document.querySelector(".totalAmount").innerHTML = `<h3>Total: ${cal}</h3>`;
 })
 
 

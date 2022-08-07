@@ -10,9 +10,11 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     line-height: 1.5;
-    background:#87CEEB;
+    background: -webkit-linear-gradient(#7AD7F0, #DBF3FA );
     animation: transitionIn 0.5s;
 }
+
+/*  */
 
 .container {
     max-width: 1110px;
@@ -22,6 +24,12 @@ body {
 
 i:hover {
     cursor: pointer;
+}
+
+.logo:hover{
+    background: -webkit-linear-gradient(#7AD7F0, #DBF3FA );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 ul {
@@ -43,6 +51,12 @@ ul {
     font-weight: bold;
 }
 
+.navbar a:hover {
+    background: -webkit-linear-gradient(#7AD7F0, #DBF3FA );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .navbar .container {
     display: flex;
     justify-content: space-between;
@@ -59,7 +73,8 @@ ul {
 }
 
 .navbar a:hover {
-    color: orangered;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .header {
@@ -76,6 +91,7 @@ ul {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    
 }
 
 .container1 {
@@ -84,6 +100,7 @@ ul {
     background: #ffffff;
     padding: 25px 30px;
     border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .container1 .title {
@@ -154,7 +171,11 @@ form .gender-details .category {
     align-items: center;
 }
 
-
+#dot-1, #dot-2, #dot-3{
+    border-radius: 50%;
+    background: #ccc;
+    margin-right: 10px;
+}
 
 #dot-1:checked ~ .category label .dot-one,
 #dot-2:checked ~ .category label .dot-two,
@@ -183,8 +204,9 @@ form .button input {
     background:#000000;
 }
 
-.total .container {
+.totalAmount {
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -196,17 +218,6 @@ form .button input {
 }
 
 
-@keyframes transitionIn {
-    from {
-            opacity: 0;
-            transform: rotateX(-10deg);
-    }
-
-    to {
-        opacity: 1;
-        transform: rotateX(0deg);
-    }
-}
 
 
 

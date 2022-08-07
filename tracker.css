@@ -10,8 +10,12 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     line-height: 1.5;
-    background:#87CEEB;
-    animation: transitionIn 0.5s;
+    background: -webkit-linear-gradient(#7AD7F0, #DBF3FA );
+    animation: transitionIn 0.3s;
+}
+
+.tracker{
+    height:100vh;
 }
 
 .container {
@@ -22,6 +26,12 @@ body {
 
 i:hover {
     cursor: pointer;
+}
+
+.logo:hover{
+    background: -webkit-linear-gradient(#7AD7F0, #DBF3FA );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 ul {
@@ -59,19 +69,20 @@ ul {
 }
 
 .navbar a:hover {
-    color: #87CEEB;
+    background: -webkit-linear-gradient(#7AD7F0, #DBF3FA );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .searchBar{
-    margin: 0 auto;
+    margin: 2em auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
-    background:#e26d5c;
+    background:white;
     padding:0.5rem;
     border-radius:0.5rem;
-    color:white;
+    color:black;
     width:80%;
 }
 
@@ -80,40 +91,69 @@ ul {
     outline:none;
     width:100%;
     margin: 0 0.5rem 0 0.5rem;
-    background:#e26d5c;
-    color:white;
+    background:white;
+    color:black;
 }
 
 ::placeholder{
-    color:#f0b2a8;
+    color:darkgray;
 }
 
 .submitBtn{
     border:none;
     outline:none;
-    background:#e26d5c;
-    color:white;
+    background:white;
+    color:black;
 }
 
 .foodDiary{
     background:white;
     display: flex;
-    align-items: center;
-    margin-top: 10px;
-    min-height: 25em;
+    align-items: flex-start;
+    flex-wrap:wrap;
+    align-content: center;
+    margin: 2em auto;
+    min-height: 20em;
     padding:0.5rem;
     border-radius:0.5rem;
     width:80%;
+    max-width:80%;
 }
 
-@keyframes transitionIn {
-    from {
-            opacity: 0;
-            transform: rotateX(-10deg);
-    }
+.foodItem{
+    text-align: center;
 
-    to {
-        opacity: 1;
-        transform: rotateX(0deg);
-    }
+}
+
+.fa-trash-alt{
+    color:red;
+}
+
+.foodItem h3{
+    font-size:1.5rem;
+    margin:0.5rem;
+}
+
+.foodItem p{
+    font-size:1rem;
+    margin:0.5rem;
+}
+
+.total{
+    text-align: center;
+    margin: 2em auto;
+    width:80%;
+    background:white;
+}
+
+.totalValues{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width:80%;
+}
+
+.totalValues h3{
+    font-weight:normal;
 }

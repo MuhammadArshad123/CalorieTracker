@@ -35,26 +35,30 @@
     </nav>
 
     <form class="searchBar">
-      <input
-        type="text"
-        class="searchInput"
-        placeholder="Search for a food..."
-      />
-      <button type="submit" class="submitBtn">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </form>
+    <div class="tracker">
+      <form class="searchBar">
+        <input
+          type="text"
+          class="searchInput"
+          placeholder="Search for a food..."
+        />
+        <button type="submit" class="submitBtn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
 
-    <section class="foodDiary"></section>
+      <section class="foodDiary"></section>
 
-    <section class="totalValues">
-      <h2>Total Values</h2>
-      <div class="totalCaloriesValue"></div>
-      <div class="totalCarbsValue"></div>
-      <div class="totalProteinValue"></div>
-      <div class="totalFatsValue"></div>
-    </section>
-
+      <section class="total">
+        <h2>Total Values</h2>
+        <div class="totalValues">
+          <div class="totalCaloriesValue"></div>
+          <div class="totalCarbsValue"></div>
+          <div class="totalProteinValue"></div>
+          <div class="totalFatsValue"></div>
+        </div>
+      </section>
+    </div>
     <script src="tracker.js"></script>
   </body>
 </html>

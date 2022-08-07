@@ -65,13 +65,13 @@ class foodInfo{ //create a class to store the food information.
 function calcTotalValues(foodItem){
    //function to calculate the total values.
     totalCalories += foodItem.cal;
-    document.querySelector('.totalCaloriesValue').innerHTML = `<h2>Calories: ${totalCalories}</h2>`;
+    document.querySelector('.totalCaloriesValue').innerHTML = `<h3>Calories: ${totalCalories}</h3>`;
     totalFats += foodItem.fats;
-    document.querySelector('.totalFatsValue').innerHTML = `<h2>Fats: ${totalFats}</h2>`;
+    document.querySelector('.totalFatsValue').innerHTML = `<h3>Fats: ${totalFats}</h3>`;
     totalCarbs += foodItem.carbs;
-    document.querySelector('.totalCarbsValue').innerHTML = `<h2>Carbs: ${totalCarbs}</h2>`;
+    document.querySelector('.totalCarbsValue').innerHTML = `<h3>Carbs: ${totalCarbs}</h3>`;
     totalProtein += foodItem.prot;
-    document.querySelector('.totalProteinValue').innerHTML = `<h2>Protein: ${totalProtein}</h2>`;
+    document.querySelector('.totalProteinValue').innerHTML = `<h3>Protein: ${totalProtein}</h3>`;
 }
 
 function newFoodItem(index){
@@ -80,14 +80,14 @@ function newFoodItem(index){
     newFood.innerHTML = `<h3>${foodItems[index].name}</h3>
     <p>${foodItems[index].cal} calories</p>
     <p>${foodItems[index].prot}g protein</p>
-    <p>${foodItems[index].fats}g fat</p>
+    <p>${foodItems[index].fats}g fat</p> 
     <p>${foodItems[index].carbs}g carbs</p>
     <img src="${foodItems[index].imgLink}">
-    <i class="fa-solid fa-trash-alt" id="trash ${foodItems[index].id}"> </i>`; //add the food information to the div.
+    <div class="trashIcon"><i class="fa-solid fa-trash-alt" id="trash ${foodItems[index].id}"></i></div>`;
     document.querySelector(".foodDiary").appendChild(newFood); //add the div to the container.
     }
     
-    document.querySelector(".foodDiary").addEventListener("click", function(e){
+    document.querySelector(".foodDiary").addEventListener("click", function(e) {
         console.log(e.target)   //TRASHTRASH
         if(e.target.classList.contains("fa-trash-alt")){
             console.log("trash clicked");
@@ -99,13 +99,13 @@ function newFoodItem(index){
             let trashId = parseInt(temp)
             console.log(trashId)
             totalCalories -= foodItems[trashId].cal;
-            document.querySelector('.totalCaloriesValue').innerHTML = `<h2>Calories: ${totalCalories}</h2>`;
+            document.querySelector('.totalCaloriesValue').innerHTML = `<h3>Calories: ${totalCalories}</h3>`;
             totalFats -= foodItems[trashId].fats;
-            document.querySelector('.totalFatsValue').innerHTML = `<h2>Fats: ${totalFats}</h2>`;
+            document.querySelector('.totalFatsValue').innerHTML = `<h3>Fats: ${totalFats}</h3>`;
             totalCarbs -= foodItems[trashId].carbs;
-            document.querySelector('.totalCarbsValue').innerHTML = `<h2>Carbs: ${totalCarbs}</h2>`;
+            document.querySelector('.totalCarbsValue').innerHTML = `<h3>Carbs: ${totalCarbs}</h3>`;
             totalProtein -= foodItems[trashId].prot;
-            document.querySelector('.totalProteinValue').innerHTML = `<h2>Protein: ${totalProtein}</h2>`;
+            document.querySelector('.totalProteinValue').innerHTML = `<h3>Protein: ${totalProtein}</h3>`;
             foodItem.remove()
             console.log(totalCalories)
             console.log(totalFats)
