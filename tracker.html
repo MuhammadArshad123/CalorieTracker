@@ -14,28 +14,26 @@
     <title>Tracker</title>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="container">
-        <div class="logo">
-          <i class="fa-solid fa-bowl-food"></i>
-          Calorie Counter
-        </div>
-        <ul class="nav">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="calculator.html">Calculator</a>
-          </li>
-          <li>
-            <a href="tracker.html">Track</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <form class="searchBar">
     <div class="tracker">
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <i class="fa-solid fa-bowl-food"></i>
+            Calorie Counter
+          </div>
+          <ul class="nav">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="calculator.html">Calculator</a>
+            </li>
+            <li>
+              <a href="tracker.html">Track</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <form class="searchBar">
         <input
           type="text"
@@ -49,16 +47,43 @@
 
       <section class="foodDiary"></section>
 
-      <section class="total">
-        <h2>Total Values</h2>
+      <div class="total">
+        <h2>Macros</h2>
         <div class="totalValues">
           <div class="totalCaloriesValue"></div>
           <div class="totalCarbsValue"></div>
           <div class="totalProteinValue"></div>
           <div class="totalFatsValue"></div>
         </div>
+      </div>
+
+      <section class="footer">
+        <div class="social">
+          <a href="https://www.instagram.com/vsaucek_89/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://github.com/MuhammadArshad123" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <ul class="list">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="calculator.html">Calculator</a>
+          </li>
+          <li>
+            <a href="tracker.html">Track</a>
+          </li>
+        </ul>
+        <p class="copyright">
+          <i class="fa-solid fa-bowl-food"></i> Calorie Counter @2022
+        </p>
       </section>
     </div>
+
     <script src="tracker.js"></script>
   </body>
 </html>
