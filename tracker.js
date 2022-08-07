@@ -11,7 +11,6 @@ let idnum = 0
 
 form.addEventListener("submit", function(e){ //when the submit button is clicked.
     e.preventDefault(); //prevent default behavior.
-    console.log("Form clicked.") //log the form being clicked.
     userInput = formInput.value; //save form input
     console.log(userInput); //log the user input for testing 
     let data = JSON.stringify({ //create a JSON object to send to the server.
@@ -21,8 +20,8 @@ form.addEventListener("submit", function(e){ //when the submit button is clicked
         method: 'post', 
         url: 'https://trackapi.nutritionix.com/v2/natural/nutrients', 
         headers: {  
-          'x-app-id': 'abb70c85', 
-          'x-app-key': 'b1768a5dd5fe49ef9ffef9af4d666616', 
+          'x-app-id': '6bb3d4c1', 
+          'x-app-key': '30b5569ff66b9fb1db9fe6a0119f0c8f', 
           'x-remote-user-id': '0',  
           'Content-Type': 'application/json' 
         },
@@ -91,7 +90,7 @@ function newFoodItem(index){
         console.log(e.target)   //TRASHTRASH
         if(e.target.classList.contains("fa-trash-alt")){
             console.log("trash clicked");
-            let foodItem = e.target.parentElement;
+            let foodItem = e.target.parentElement.parentElement;
             let element = e.target
             let temp = ""
             temp = element.id
@@ -107,10 +106,7 @@ function newFoodItem(index){
             totalProtein -= foodItems[trashId].prot;
             document.querySelector('.totalProteinValue').innerHTML = `<h3>Protein: ${totalProtein}</h3>`;
             foodItem.remove()
-            console.log(totalCalories)
-            console.log(totalFats)
-            console.log(totalCarbs)
-            console.log(totalProtein)
+            deleteObject(trashId)
         }
       });
 
@@ -123,4 +119,11 @@ function newFoodItem(index){
 
 function capitalizeString(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function deleteObject(trashId){
+    foodItems.splice(trashId,1)
+    for(i = trashId;i < foodItems.length;i++){
+        document.getElementById('trash ${i}').id = 'trash ${i-1}'
+    }
 }

@@ -2,6 +2,7 @@ const btn = document.querySelector(".btn")
 
 
 btn.addEventListener("click", e => {
+    e.preventDefault();
     const age = document.getElementById("age").value
     const height = document.getElementById("height").value
     const weight = document.getElementById("weight").value

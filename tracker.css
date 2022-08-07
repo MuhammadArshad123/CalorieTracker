@@ -6,16 +6,20 @@
     padding: 0; 
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
+    margin: 0;
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     line-height: 1.5;
     background: -webkit-linear-gradient(#7AD7F0, #DBF3FA );
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     animation: transitionIn 0.3s;
-}
-
-.tracker{
-    height:100vh;
 }
 
 .container {
@@ -84,6 +88,7 @@ ul {
     border-radius:0.5rem;
     color:black;
     width:80%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .searchInput{
@@ -118,6 +123,7 @@ ul {
     border-radius:0.5rem;
     width:80%;
     max-width:80%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .foodItem{
@@ -139,11 +145,18 @@ ul {
     margin:0.5rem;
 }
 
+
 .total{
     text-align: center;
     margin: 2em auto;
     width:80%;
     background:white;
+}
+
+.total{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius:2rem;
+    margin-bottom:4em;
 }
 
 .totalValues{
@@ -152,8 +165,83 @@ ul {
     align-items: center;
     margin: 0 auto;
     width:80%;
+    min-height:3em;
 }
 
 .totalValues h3{
     font-weight:normal;
+}
+
+.footer {
+
+    padding: 40px 0;
+    background-color: #000000;
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #4b4c4d;
+}
+
+.footer .social a {
+    font-size: 24px;
+    color: inherit;
+    border: 1px solid rgb(0, 0, 0);
+    width: 40px;
+    height:40px;
+    line-height: 3px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+
+}
+
+.footer .social a:hover {
+    opacity: 0.9;
+   
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom:0;
+    text-align: center;
+}
+
+.footer .social i {
+    color: white;
+}
+
+.footer .social i:hover {
+    color: #7AD7F0
+}
+
+.footer ul li a{
+    color: white;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer ul li a:hover {
+    opacity: 1;
+    color: #7AD7F0
+
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
 }
