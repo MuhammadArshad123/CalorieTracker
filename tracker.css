@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    background:#87CEEB;
+    animation: transitionIn 0.5s;
+}
+
+.container {
+    max-width: 1110px;
+    padding: 0 30px;
+    margin: 0 auto;   
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.navbar {
+    background: rgb(0, 0, 0);
+    color: #FFffff;
+    font-size: 30px;
+    font-weight: bold;
+    height: 90px;
+}
+
+.navbar a {
+    color: #FFffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    height: 100%;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar a:hover {
+    color: #87CEEB;
+}
+
+.searchBar{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    background:#e26d5c;
+    padding:0.5rem;
+    border-radius:0.5rem;
+    color:white;
+    width:80%;
+}
+
+.searchInput{
+    border:none;
+    outline:none;
+    width:100%;
+    margin: 0 0.5rem 0 0.5rem;
+    background:#e26d5c;
+    color:white;
+}
+
+::placeholder{
+    color:#f0b2a8;
+}
+
+.submitBtn{
+    border:none;
+    outline:none;
+    background:#e26d5c;
+    color:white;
+}
+
+.foodDiary{
+    background:white;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    min-height: 25em;
+    padding:0.5rem;
+    border-radius:0.5rem;
+    width:80%;
+}
+
+@keyframes transitionIn {
+    from {
+            opacity: 0;
+            transform: rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
